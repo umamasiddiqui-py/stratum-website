@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stratum Intelligence — Evidence & Intelligence Advisory</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --sage: #6b7562;
+    --sage-light: #8a9480;
+    --sage-dark: #4a5244;
+    --sage-pale: #f0f1ec;
+    --sage-mid: #dde0d8;
+    --white: #ffffff;
+    --off-white: #f8f8f5;
+    --charcoal: #1e1e1c;
+    --mid-gray: #4a4a47;
+    --light-gray: #8a8a86;
+    --accent: #c8b89a;
+    --accent-light: #e8ddd0;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--white);
+    color: var(--charcoal);
+    font-size: 11pt;
+    line-height: 1.65;
+  }
+
+  /* ─── PAGE SHELL ─── */
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto 24px;
+    background: var(--white);
+    position: relative;
+    overflow: hidden;
+    page-break-after: always;
+  }
+
+  /* ─── COVER PAGE ─── */
+  .cover {
+    background: var(--sage);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0;
+  }
+
+  .cover-top {
+    padding: 52px 56px 0;
+  }
+
+  .cover-logo-area {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 80px;
+  }
+
+  .cover-logo-wordmark {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 400;
+    color: var(--white);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+  }
+
+  .cover-logo-rule {
+    display: block;
+    width: 36px;
+    height: 1px;
+    background: rgba(255,255,255,0.5);
+    margin-top: 4px;
+    margin-left: auto;
+  }
+
+  .cover-headline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 54px;
+    font-weight: 300;
+    line-height: 1.15;
+    color: var(--white);
+    letter-spacing: -0.01em;
+    max-width: 420px;
+  }
+
+  .cover-headline em {
+    font-style: italic;
+    font-weight: 300;
+    color: var(--accent);
+  }
+
+  .cover-sub {
+    margin-top: 24px;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+    font-weight: 300;
+  }
+
+  .cover-bottom {
+    background: rgba(0,0,0,0.15);
+    padding: 32px 56px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .cover-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    font-style: italic;
+    color: rgba(255,255,255,0.8);
+    font-weight: 300;
+  }
+
+  .cover-contact {
+    text-align: right;
+    font-size: 10px;
+    color: rgba(255,255,255,0.55);
+    letter-spacing: 0.05em;
+    line-height: 1.9;
+  }
+
+  .cover-geo-decor {
+    position: absolute;
+    right: -60px;
+    top: 40px;
+    width: 340px;
+    height: 340px;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 50%;
+  }
+  .cover-geo-decor2 {
+    position: absolute;
+    right: 40px;
+    top: 130px;
+    width: 160px;
+    height: 160px;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 50%;
+  }
+
+  /* ─── INNER PAGES ─── */
+  .inner {
+    padding: 52px 56px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 48px;
+    padding-bottom: 18px;
+    border-bottom: 0.5px solid var(--sage-mid);
+  }
+
+  .section-label {
+    font-size: 9px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--sage);
+    font-weight: 500;
+  }
+
+  .page-number {
+    font-size: 10px;
+    color: var(--light-gray);
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 38px;
+    font-weight: 300;
+    line-height: 1.15;
+    color: var(--charcoal);
+    margin-bottom: 28px;
+    letter-spacing: -0.01em;
+  }
+
+  .section-title em {
+    font-style: italic;
+    color: var(--sage);
+  }
+
+  .body-text {
+    font-size: 10.5pt;
+    color: var(--mid-gray);
+    line-height: 1.75;
+    font-weight: 300;
+  }
+
+  .body-text strong {
+    color: var(--charcoal);
+    font-weight: 500;
+  }
+
+  /* ─── PHILOSOPHY PILLS ─── */
+  .philosophy-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    margin-top: 36px;
+  }
+
+  .philosophy-pill {
+    background: var(--sage-pale);
+    border-left: 2px solid var(--sage);
+    padding: 22px 20px;
+    border-radius: 2px;
+  }
+
+  .pill-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    color: var(--sage-dark);
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+
+  .pill-sub {
+    font-size: 9.5pt;
+    color: var(--light-gray);
+    font-style: italic;
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  /* ─── SERVICE CARDS ─── */
+  .services-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 12px;
+  }
+
+  .service-card {
+    background: var(--off-white);
+    border: 0.5px solid var(--sage-mid);
+    border-radius: 4px;
+    padding: 26px 24px;
+  }
+
+  .service-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 44px;
+    color: var(--sage-mid);
+    font-weight: 300;
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+
+  .service-name {
+    font-size: 11pt;
+    font-weight: 500;
+    color: var(--charcoal);
+    margin-bottom: 6px;
+    letter-spacing: 0.01em;
+  }
+
+  .service-abbr {
+    display: inline-block;
+    font-size: 8.5px;
+    letter-spacing: 0.14em;
+    color: var(--sage);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    font-weight: 500;
+  }
+
+  .service-desc {
+    font-size: 9.5pt;
+    color: var(--mid-gray);
+    line-height: 1.65;
+    font-weight: 300;
+  }
+
+  .service-tracks {
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 0.5px solid var(--sage-mid);
+  }
+
+  .service-track-item {
+    font-size: 9pt;
+    color: var(--sage-dark);
+    padding: 3px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .service-track-item::before {
+    content: "—";
+    color: var(--sage-light);
+    flex-shrink: 0;
+  }
+
+  .service-outcome {
+    margin-top: 12px;
+    font-size: 9pt;
+    font-style: italic;
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--sage);
+  }
+
+  /* ─── WHO WE WORK WITH ─── */
+  .audience-list {
+    margin-top: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .audience-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 18px 0;
+    border-bottom: 0.5px solid var(--sage-mid);
+  }
+
+  .audience-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--sage);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .audience-name {
+    font-size: 12pt;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    color: var(--charcoal);
+    flex: 1;
+  }
+
+  .audience-tag {
+    font-size: 8.5px;
+    letter-spacing: 0.14em;
+    color: var(--sage-light);
+    text-transform: uppercase;
+    font-weight: 300;
+  }
+
+  /* ─── ENGAGEMENT MODELS ─── */
+  .engagement-row {
+    display: flex;
+    gap: 0;
+    margin-top: 24px;
+    border: 0.5px solid var(--sage-mid);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .engagement-item {
+    flex: 1;
+    padding: 28px 24px;
+    border-right: 0.5px solid var(--sage-mid);
+  }
+
+  .engagement-item:last-child { border-right: none; }
+
+  .engagement-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--charcoal);
+    margin-bottom: 10px;
+  }
+
+  .engagement-desc {
+    font-size: 9.5pt;
+    color: var(--mid-gray);
+    line-height: 1.65;
+    font-weight: 300;
+  }
+
+  .engagement-tag {
+    margin-top: 14px;
+    font-size: 8.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--sage);
+    font-weight: 500;
+  }
+
+  /* ─── FOCUS AREAS ─── */
+  .focus-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 14px;
+    margin-top: 28px;
+  }
+
+  .focus-card {
+    background: var(--sage-pale);
+    padding: 20px 18px;
+    border-radius: 4px;
+    border-bottom: 2px solid var(--sage);
+  }
+
+  .focus-name {
+    font-size: 10.5pt;
+    font-weight: 500;
+    color: var(--sage-dark);
+    line-height: 1.4;
+  }
+
+  /* ─── USE CASES ─── */
+  .usecase-list {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .usecase-item {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .usecase-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 300;
+    color: var(--sage-mid);
+    line-height: 1;
+    flex-shrink: 0;
+    width: 36px;
+    text-align: right;
+  }
+
+  .usecase-text {
+    padding-top: 4px;
+    font-size: 10.5pt;
+    color: var(--mid-gray);
+    line-height: 1.65;
+    font-weight: 300;
+    flex: 1;
+    border-bottom: 0.5px solid var(--sage-pale);
+    padding-bottom: 16px;
+  }
+
+  /* ─── WHY STRATUM ─── */
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 24px;
+  }
+
+  .why-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .why-title {
+    font-size: 10.5pt;
+    font-weight: 500;
+    color: var(--charcoal);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .why-title::before {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 1.5px;
+    background: var(--sage);
+    flex-shrink: 0;
+  }
+
+  .why-desc {
+    font-size: 9.5pt;
+    color: var(--mid-gray);
+    line-height: 1.65;
+    font-weight: 300;
+    padding-left: 30px;
+  }
+
+  /* ─── CLOSING PAGE ─── */
+  .closing {
+    background: var(--charcoal);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 56px;
+  }
+
+  .closing-top {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .closing-headline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 52px;
+    font-weight: 300;
+    color: var(--white);
+    line-height: 1.15;
+    max-width: 400px;
+  }
+
+  .closing-headline em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .closing-body {
+    margin-top: 28px;
+    font-size: 11pt;
+    color: rgba(255,255,255,0.55);
+    max-width: 360px;
+    line-height: 1.75;
+    font-weight: 300;
+  }
+
+  .closing-cta {
+    margin-top: 40px;
+    display: inline-block;
+    border: 1px solid rgba(255,255,255,0.25);
+    padding: 14px 32px;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--white);
+    font-weight: 400;
+    width: fit-content;
+  }
+
+  .closing-contacts {
+    display: flex;
+    gap: 40px;
+    border-top: 0.5px solid rgba(255,255,255,0.12);
+    padding-top: 32px;
+  }
+
+  .contact-block {}
+
+  .contact-type {
+    font-size: 8.5px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+    margin-bottom: 6px;
+  }
+
+  .contact-value {
+    font-size: 11pt;
+    font-family: 'Cormorant Garamond', serif;
+    color: rgba(255,255,255,0.8);
+  }
+
+  .closing-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.3);
+    margin-bottom: 36px;
+  }
+
+  /* ─── PRINT ─── */
+  @media print {
+    body { background: white; }
+    .page { margin: 0; box-shadow: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- PAGE 1 — COVER                              -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="page cover">
+  <div class="cover-geo-decor"></div>
+  <div class="cover-geo-decor2"></div>
+
+  <div class="cover-top">
+    <div class="cover-logo-area">
+      <div>
+        <div class="cover-logo-wordmark">Stratum</div>
+        <span class="cover-logo-rule"></span>
+      </div>
+    </div>
+
+    <h1 class="cover-headline">
+      Evidence &amp; Intelligence<br>Advisory for <em>Life Sciences</em>
+    </h1>
+    <p class="cover-sub">Translating Science into Strategy</p>
+  </div>
+
+  <div class="cover-bottom">
+    <p class="cover-tagline">Clarity when decisions matter most.</p>
+    <div class="cover-contact">
+      <div>hello@stratum-inc.in</div>
+      <div>www.stratum-inc.in</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- PAGE 2 — ABOUT                              -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="section-label">About</span>
+    <span class="page-number">02</span>
+  </div>
+
+  <h2 class="section-title">What is<br><em>Stratum?</em></h2>
+
+  <p class="body-text">
+    Stratum is an evidence and intelligence advisory built for life sciences organizations operating in complex, high-stakes environments. We work at the intersection of <strong>science, data, and strategy</strong> — helping biotech, precision medicine, and healthcare companies transform fragmented information into clear, decision-ready intelligence.
+  </p>
+
+  <p class="body-text" style="margin-top: 20px;">
+    In today's landscape, the challenge is not lack of data — it is the <strong>absence of clarity</strong>. Organizations are inundated with publications, competitor filings, pipeline trackers, and market reports. Yet the path forward often remains opaque.
+  </p>
+
+  <p class="body-text" style="margin-top: 20px;">
+    Stratum exists to solve that. We synthesize the right signals, frame them in strategic context, and deliver intelligence that enables confident action — not further deliberation.
+  </p>
+
+  <div style="margin-top: 44px; padding: 32px 36px; background: var(--sage-pale); border-left: 2px solid var(--sage); border-radius: 2px;">
+    <p style="font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 300; color: var(--sage-dark); line-height: 1.45; font-style: italic;">
+      "The challenge is not lack of data — it is the absence of clarity."
+    </p>
+    <p style="margin-top: 16px; font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sage-light);">Stratum Intelligence</p>
+  </div>
+
+  <div class="philosophy-grid" style="margin-top: 44px;">
+    <div class="philosophy-pill">
+      <div class="pill-title">Precision</div>
+      <div class="pill-sub">Signal, not noise</div>
+    </div>
+    <div class="philosophy-pill">
+      <div class="pill-title">Insight</div>
+      <div class="pill-sub">Meaning, not data</div>
+    </div>
+    <div class="philosophy-pill">
+      <div class="pill-title">Strategy</div>
+      <div class="pill-sub">Direction, not output</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- PAGE 3 — WHO WE WORK WITH                   -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="section-label">Clients</span>
+    <span class="page-number">03</span>
+  </div>
+
+  <h2 class="section-title">Who We<br><em>Work With</em></h2>
+
+  <p class="body-text">
+    We support teams operating at the frontier of innovation — organizations where the quality of intelligence directly shapes the quality of scientific and business decisions.
+  </p>
+
+  <div class="audience-list">
+    <div class="audience-item">
+      <div class="audience-dot"></div>
+      <div class="audience-name">Biotech &amp; Life Sciences Companies</div>
+      <div class="audience-tag">Core</div>
+    </div>
+    <div class="audience-item">
+      <div class="audience-dot"></div>
+      <div class="audience-name">Cell &amp; Gene Therapy Innovators</div>
+      <div class="audience-tag">Specialist</div>
+    </div>
+    <div class="audience-item">
+      <div class="audience-dot"></div>
+      <div class="audience-name">Precision Medicine Platforms</div>
+      <div class="audience-tag">Core</div>
+    </div>
+    <div class="audience-item">
+      <div class="audience-dot"></div>
+      <div class="audience-name">AI-driven Drug Discovery Startups</div>
+      <div class="audience-tag">Emerging</div>
+    </div>
+    <div class="audience-item">
+      <div class="audience-dot"></div>
+      <div class="audience-name">R&amp;D and Strategy Teams in Healthcare</div>
+      <div class="audience-tag">Enterprise</div>
+    </div>
+  </div>
+
+  <div style="margin-top: 44px; padding-top: 32px; border-top: 0.5px solid var(--sage-mid);">
+    <p style="font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--sage); margin-bottom: 16px; font-weight: 500;">Our Partners Share These Qualities</p>
+    <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+      <span style="background: var(--sage-pale); border: 0.5px solid var(--sage-mid); padding: 8px 16px; font-size: 9.5pt; color: var(--sage-dark); border-radius: 2px;">Operate in complex scientific domains</span>
+      <span style="background: var(--sage-pale); border: 0.5px solid var(--sage-mid); padding: 8px 16px; font-size: 9.5pt; color: var(--sage-dark); border-radius: 2px;">Require high-quality strategic clarity</span>
+      <span style="background: var(--sage-pale); border: 0.5px solid var(--sage-mid); padding: 8px 16px; font-size: 9.5pt; color: var(--sage-dark); border-radius: 2px;">Value precision over volume</span>
+      <span style="background: var(--sage-pale); border: 0.5px solid var(--sage-mid); padding: 8px 16px; font-size: 9.5pt; color: var(--sage-dark); border-radius: 2px;">Demand decision-ready intelligence</span>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- PAGE 4 — SERVICES (1 & 2)                  -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="section-label">Services</span>
+    <span class="page-number">04</span>
+  </div>
+
+  <h2 class="section-title">What We<br><em>Do</em></h2>
+
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-number">01</div>
+      <div class="service-name">Competitive Intelligence</div>
+      <span class="service-abbr">CI Track</span>
+      <p class="service-desc">We track and analyze the competitive landscape so you always understand where you stand — and what's coming next.</p>
+      <div class="service-tracks">
+        <div class="service-track-item">Global pipeline monitoring</div>
+        <div class="service-track-item">Competitor strategy analysis</div>
+        <div class="service-track-item">Technology shift tracking</div>
+      </div>
+      <p class="service-outcome">→ Know where you stand. Anticipate what's next.</p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-number">02</div>
+      <div class="service-name">Market &amp; Landscape Intelligence</div>
+      <span class="service-abbr">MR Track</span>
+      <p class="service-desc">We map market structure, access dynamics, and regulatory geography to identify where real value exists and how to capture it.</p>
+      <div class="service-tracks">
+        <div class="service-track-item">Market structure analysis</div>
+        <div class="service-track-item">Access &amp; adoption insights</div>
+        <div class="service-track-item">Regulatory &amp; geographic dynamics</div>
+      </div>
+      <p class="service-outcome">→ Identify where real value exists.</p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-number">03</div>
+      <div class="service-name">Product &amp; Opportunity Intelligence</div>
+      <span class="service-abbr">PO Track</span>
+      <p class="service-desc">We uncover unmet needs, white space opportunities, and the strategic directions most worth pursuing given your resources.</p>
+      <div class="service-tracks">
+        <div class="service-track-item">Unmet medical needs assessment</div>
+        <div class="service-track-item">White space identification</div>
+        <div class="service-track-item">Strategic product direction</div>
+      </div>
+      <p class="service-outcome">→ Decide what to build and where to focus.</p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-number">04</div>
+      <div class="service-name">Scientific &amp; Translational Intelligence</div>
+      <span class="service-abbr">SL Track</span>
+      <p class="service-desc">We translate complex research, clinical data, and emerging science into clear, actionable insights for leadership and strategy teams.</p>
+      <div class="service-tracks">
+        <div class="service-track-item">Complex research translation</div>
+        <div class="service-track-item">Clinical data synthesis</div>
+        <div class="service-track-item">Emerging science briefings</div>
+      </div>
+      <p class="service-outcome">→ Turn science into actionable strategy.</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- PAGE 5 — HOW WE WORK                        -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="section-label">Approach</span>
+    <span class="page-number">05</span>
+  </div>
+
+  <h2 class="section-title">How We<br><em>Work</em></h2>
+
+  <p class="body-text">
+    Stratum acts as an <strong>external intelligence layer</strong> — supporting your team without adding internal complexity, bureaucracy, or overhead. We embed into your decision cycle and deliver intelligence aligned to your specific timelines and objectives.
+  </p>
+
+  <div style="margin-top: 36px; margin-bottom: 36px;">
+    <p style="font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--sage); margin-bottom: 20px; font-weight: 500;">Engagement Models</p>
+    <div class="engagement-row">
+      <div class="engagement-item">
+        <div class="engagement-name">Focused Intelligence Briefs</div>
+        <p class="engagement-desc">Targeted, time-bound research on a specific question, competitor, technology, or market. Delivered within your timeline.</p>
+        <p class="engagement-tag">Ideal for: rapid decisions</p>
+      </div>
+      <div class="engagement-item">
+        <div class="engagement-name">Strategic Research Projects</div>
+        <p class="engagement-desc">Deep, multi-dimensional analysis for major strategic decisions — pipeline prioritization, market entry, partnership assessment.</p>
+        <p class="engagement-tag">Ideal for: major inflections</p>
+      </div>
+      <div class="engagement-item">
+        <div class="engagement-name">Ongoing Advisory Support</div>
+        <p class="engagement-desc">A sustained intelligence partnership providing continuous monitoring, regular briefings, and on-demand strategic input.</p>
+        <p class="engagement-tag">Ideal for: continuous clarity</p>
+      </div>
+    </div>
+  </div>
+
+  <p style="font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--sage); margin-bottom: 20px; font-weight: 500;">Our Approach</p>
+
+  <div style="display: flex; flex-direction: column; gap: 14px;">
+    <div style="display: flex; gap: 16px; align-items: flex-start; padding: 16px 0; border-bottom: 0.5px solid var(--sage-pale);">
+      <span style="font-family: 'Cormorant Garamond', serif; font-size: 28px; color: var(--sage-mid); font-weight: 300; flex-shrink: 0; width: 32px; text-align: right; line-height: 1;">1</span>
+      <div style="padding-top: 2px;">
+        <p style="font-weight: 500; font-size: 10.5pt; color: var(--charcoal); margin-bottom: 4px;">Understand your decision context</p>
+        <p class="body-text">We begin every engagement by clarifying the decision at stake — not the data requested. What you need to know flows from what you need to decide.</p>
+      </div>
+    </div>
+    <div style="display: flex; gap: 16px; align-items: flex-start; padding: 16px 0; border-bottom: 0.5px solid var(--sage-pale);">
+      <span style="font-family: 'Cormorant Garamond', serif; font-size: 28px; color: var(--sage-mid); font-weight: 300; flex-shrink: 0; width: 32px; text-align: right; line-height: 1;">2</span>
+      <div style="padding-top: 2px;">
+        <p style="font-weight: 500; font-size: 10.5pt; color: var(--charcoal); margin-bottom: 4px;">Gather and synthesize at the frontier</p>
+        <p class="body-text">We draw on global scientific literature, clinical registries, regulatory databases, competitive filings, and proprietary intelligence frameworks.</p>
+      </div>
+    </div>
+    <div style="display: flex; gap: 16px; align-items: flex-start; padding: 16px 0;">
+      <span style="font-family: 'Cormorant Garamond', serif; font-size: 28px; color: var(--sage-mid); font-weight: 300; flex-shrink: 0; width: 32px; text-align: right; line-height: 1;">3</span>
+      <div style="padding-top: 2px;">
+        <p style="font-weight: 500; font-size: 10.5pt; color: var(--charcoal); margin-bottom: 4px;">Deliver decision-ready intelligence</p>
+        <p class="body-text">Outputs are structured for leadership clarity — concise, structured, and calibrated to the specific choice at hand. No noise. No ambiguity.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- PAGE 6 — FOCUS AREAS & USE CASES           -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="section-label">Expertise</span>
+    <span class="page-number">06</span>
+  </div>
+
+  <h2 class="section-title">Key Focus<br><em>Areas</em></h2>
+
+  <div class="focus-grid">
+    <div class="focus-card">
+      <div class="focus-name">Oncology</div>
+    </div>
+    <div class="focus-card">
+      <div class="focus-name">Cell &amp; Gene Therapy</div>
+    </div>
+    <div class="focus-card">
+      <div class="focus-name">CAR-T &amp; Exosomes</div>
+    </div>
+    <div class="focus-card">
+      <div class="focus-name">Dermatology &amp; Chronic Disease</div>
+    </div>
+    <div class="focus-card">
+      <div class="focus-name">Rare &amp; Orphan Diseases</div>
+    </div>
+    <div class="focus-card">
+      <div class="focus-name">AI in Drug Development</div>
+    </div>
+    <div class="focus-card" style="grid-column: 1 / -1; border-bottom-width: 2px;">
+      <div class="focus-name">Regenerative Medicine</div>
+    </div>
+  </div>
+
+  <div style="margin-top: 44px;">
+    <p style="font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--sage); margin-bottom: 20px; font-weight: 500;">Example Use Cases</p>
+
+    <div class="usecase-list">
+      <div class="usecase-item">
+        <div class="usecase-num">1</div>
+        <div class="usecase-text">Tracking global CAR-T therapy evolution and pipeline for strategic positioning against emerging competitors.</div>
+      </div>
+      <div class="usecase-item">
+        <div class="usecase-num">2</div>
+        <div class="usecase-text">Identifying white space opportunities in dermatology therapeutics ahead of a product development decision.</div>
+      </div>
+      <div class="usecase-item">
+        <div class="usecase-num">3</div>
+        <div class="usecase-text">Supporting market entry decisions in emerging geographies with regulatory, access, and competitive analysis.</div>
+      </div>
+      <div class="usecase-item">
+        <div class="usecase-num">4</div>
+        <div class="usecase-text">Translating scientific breakthroughs in regenerative medicine into clear business strategy for leadership teams.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- PAGE 7 — WHY STRATUM                        -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="page inner">
+  <div class="page-header">
+    <span class="section-label">Differentiation</span>
+    <span class="page-number">07</span>
+  </div>
+
+  <h2 class="section-title">Why<br><em>Stratum</em></h2>
+
+  <p class="body-text">
+    We don't simply provide research. We help you navigate the critical decisions that define your organization's trajectory — and we do it with the rigor, speed, and focus that high-stakes environments demand.
+  </p>
+
+  <div class="why-grid" style="margin-top: 36px;">
+    <div class="why-item">
+      <div class="why-title">Life Sciences Focus</div>
+      <div class="why-desc">Deep, exclusive focus on life sciences ensures our frameworks, sources, and intuitions are calibrated to your domain — not adapted from elsewhere.</div>
+    </div>
+    <div class="why-item">
+      <div class="why-title">High-Signal Analysis</div>
+      <div class="why-desc">We are ruthless about signal vs. noise. Every deliverable is structured around clarity, not comprehensiveness for its own sake.</div>
+    </div>
+    <div class="why-item">
+      <div class="why-title">Built for Complexity</div>
+      <div class="why-desc">We thrive in ambiguous, fast-moving scientific and competitive landscapes. Our methodology is designed for environments where information is incomplete.</div>
+    </div>
+    <div class="why-item">
+      <div class="why-title">Flexible Engagement</div>
+      <div class="why-desc">From a single focused brief to a sustained advisory relationship, we scale to your needs without bureaucratic overhead or unnecessary complexity.</div>
+    </div>
+    <div class="why-item">
+      <div class="why-title">Founder-Led</div>
+      <div class="why-desc">Every engagement is led by senior expertise. You receive direct, accountable intelligence — not delegated to a junior team after the first meeting.</div>
+    </div>
+    <div class="why-item">
+      <div class="why-title">Decision-Oriented</div>
+      <div class="why-desc">Our outputs are designed to enable a specific decision, not inform generally. This discipline shapes how we structure every piece of analysis we deliver.</div>
+    </div>
+  </div>
+
+  <div style="margin-top: 44px; background: var(--charcoal); padding: 32px 36px; border-radius: 4px; display: flex; align-items: flex-start; gap: 24px;">
+    <div>
+      <p style="font-family: 'Cormorant Garamond', serif; font-size: 21px; font-weight: 300; color: var(--white); line-height: 1.45; font-style: italic; margin-bottom: 14px;">
+        "We enable clarity when decisions matter most."
+      </p>
+      <p style="font-size: 9.5pt; color: rgba(255,255,255,0.5); line-height: 1.65; font-weight: 300;">
+        Whether you're entering a new market, responding to a competitor, prioritizing your pipeline, or evaluating a partnership — Stratum delivers the intelligence to act with confidence.
+      </p>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- PAGE 8 — CLOSING / CONTACT                  -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="page closing">
+  <div class="closing-logo">Stratum</div>
+
+  <div class="closing-top">
+    <h2 class="closing-headline">
+      Ready to bring <em>clarity</em> to your decisions?
+    </h2>
+    <p class="closing-body">
+      We'd be glad to discuss how Stratum can support your team with strategic intelligence, research-driven insights, and decision support tailored to your specific context.
+    </p>
+    <div class="closing-cta">Begin a Conversation</div>
+  </div>
+
+  <div class="closing-contacts">
+    <div class="contact-block">
+      <div class="contact-type">Email</div>
+      <div class="contact-value">hello@stratum-inc.in</div>
+    </div>
+    <div class="contact-block">
+      <div class="contact-type">Website</div>
+      <div class="contact-value">www.stratum-inc.in</div>
+    </div>
+    <div class="contact-block">
+      <div class="contact-type">Specialization</div>
+      <div class="contact-value">Life Sciences Intelligence</div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
